@@ -183,9 +183,14 @@ CLICKBAIT_PATTERNS = [r"you won'?t believe", r"what happens next", r"number \d+"
 
 @st.cache_resource
 def load_assets():
+    import os
     from sklearn.utils.validation import check_is_fitted
-    m_path = "/Users/aparnasingh/ai/FakeNewsDetector/model.pkl"
-    v_path = "/Users/aparnasingh/ai/FakeNewsDetector/vectorizer.pkl"
+    
+    # Get the directory of the current script
+    current_dir = os.path.dirname(__file__)
+    m_path = os.path.join(current_dir, "model.pkl")
+    v_path = os.path.join(current_dir, "vectorizer.pkl")
+    
     try:
         model = pickle.load(open(m_path, "rb"))
         vectorizer = pickle.load(open(v_path, "rb"))
@@ -249,7 +254,6 @@ with c2:
 # Output Section - ONLY SHOW AFTER CLICK
 if analyze:
     if not user_input.strip() or len(user_input) < 10:
-        st.center_column()
         st.warning("⚠️ Please provide content for analysis.")
     else:
         with st.spinner("Analyzing neural signatures..."):
