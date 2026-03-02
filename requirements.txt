@@ -3,4 +3,3 @@ pandas
 plotly
 vaderSentiment
 scikit-learn==1.4.2
-datetime
