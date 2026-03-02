@@ -275,8 +275,10 @@ if analyze:
                 fig.update_layout(height=240, margin=dict(t=0,b=0,l=20,r=20), paper_bgcolor='rgba(0,0,0,0)', font={'color': "white", 'family': "Inter"})
                 st.plotly_chart(fig, use_container_width=True)
                 
-                st.progress(min(metrics['Sensationalism']/10, 1.0), text=f"Sensationalism Index: {metrics['Sensationalism']}%")
-                st.progress(min(metrics['EmotionalIntensity'], 1.0), text=f"Emotional Polarity: {int(metrics['EmotionalIntensity']*100)}%")
+                st.progress(min(metrics['Sensationalism']/10, 1.0), text=f"Sensational Score: {metrics['Sensationalism']}%")
+                st.progress(min(metrics['Clickbait']/5, 1.0), text=f"Clickbait Score: {metrics['Clickbait']}")
+                st.progress(min(metrics['Exaggeration']/10, 1.0), text=f"Exaggeration Score: {metrics['Exaggeration']}")
+                st.progress(min(metrics['EmotionalIntensity'], 1.0), text=f"Emotional Intensity: {int(metrics['EmotionalIntensity']*100)}%")
                 
                 st.markdown('</div>', unsafe_allow_html=True)
             
