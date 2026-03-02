@@ -215,5 +215,10 @@ It emphasizes **interpretable misinformation detection** rather than black-box p
 
 ---
 
+# 15. Full Project Report  
+
+**Download Detailed Project Report (PDF)**  
+👉 [View Report](News Credibility Detection & Writing Style Analysis System Report.pdf)
+
 **Project:** Fake News Detection & Credibility Analysis  
 Machine Learning & NLP
